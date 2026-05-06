@@ -1,0 +1,13 @@
+networks:
+  default:
+    name: xoxxox_netmid
+    external: true
+services:
+  xoxxox_envevo:
+    image: xoxxox/envevo:001
+    container_name: xoxxox_envevo
+    env_file:
+      - ./envdir.txt
+    volumes:
+    - ../../../import/cnnmmd_xoxxox_envevo/envevo:/opt/envevo
+    command: bash -c "/usr/sbin/sshd -D"
